@@ -1,8 +1,4 @@
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	../README.md
-
-nothing added to commit but untracked files present (use "git add" to track)
+[master 564c1e4] The last digit
+ 2 files changed, 33 insertions(+)
+ create mode 100644 0x01-variables_if_else_while/.1-last_digit.c.swp
+ create mode 100644 0x01-variables_if_else_while/1-last_digit.c
