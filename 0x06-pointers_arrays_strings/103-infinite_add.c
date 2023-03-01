@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+
 
 /**
  * carry_from_prev - carry overflow from previous index to current index
