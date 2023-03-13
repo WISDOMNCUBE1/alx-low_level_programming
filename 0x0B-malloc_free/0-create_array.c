@@ -1,44 +1,38 @@
-#include "main.h"
+#include <unistd.h>
 #include <stdlib.h>
 
 /**
- * *create_array - creates an array of chars, and initializes
- *  it with a specific char.
- *  @c: char to initialize
- *  @size: number of bytes to allocate
- *
- *  Return: a pointer to the array or null if it fails
+ * create_array - Main entry
+ * @c: The character to print
+ *@size: unsigned integer
+ * Return: char.
  */
 char *create_array(unsigned int size, char c)
 {
-	char *array = malloc(size);
+	char *p;
+	unsigned int x;
 
-	if (size == 0 || array == 0)
+	if (size == 0)
+	{
 		return (NULL);
-	while (size--)
-		array[size] = c;
-	return (array);
-}
+	}
+	else
+	{
+		p = malloc(size * sizeof(c));
 
-vi 0-create_array.c
-#include "holberton.h"
-#include <stdlib.h>
+		if (p != NULL)
+		{
+		for (x = 0; x < size; x++)
+		{
+			p[x] = c;
+/*  *(p+x)=c     p[x]=c  */
+		}
+		}
+		else
+		{
+			return (NULL);
+		}
 
-/**
- * *create_array - creates an array of chars, and initializes
- *  it with a specific char.
- *  @c: char to initialize
- *  @size: number of bytes to allocate
- *
- *  Return: a pointer to the array or null if it fails
- */
-char *create_array(unsigned int size, char c)
-{
-	char *array = malloc(size);
-
-	if (size == 0 || array == 0)
-		return (NULL);
-	while (size--)
-		array[size] = c;
-	return (array);
+		return (p);
+	}
 }
