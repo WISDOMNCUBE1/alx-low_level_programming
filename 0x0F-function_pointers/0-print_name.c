@@ -1,16 +1,13 @@
-#include "function_pointers.h"
 #include <stdio.h>
 /**
- * print_name - print name using pointer to function
- * @name: string to add
- * @f: pointer to function
- * Return: nothing
+ *print_name -main entry.
+ *@name:char pointer
+ *@f: pointer to a function
+ *Description:Function that prints a string in reverse.
+ * Return:void
  **/
-	void print_name(char *name, void (*f)(char *))
+void print_name(char *name, void (*f)(char *))
 {
-	if (name == NULL || f == NULL)
-	return;
-	
-
-	f(name);
+	if (name != NULL && f != NULL)
+		(*f)(name);
 }
