@@ -1,13 +1,18 @@
-#include <stdio.h>
+#include "function_pointers.h"
 /**
- *print_name -main entry.
- *@name:char pointer
- *@f: pointer to a function
- *Description:Function that prints a string in reverse.
- * Return:void
- **/
-void print_name(char *name, void (*f)(char *))
+ * array_iterator - executes a function on each element of an array
+ * @array: input array
+ * @size: size of the array
+ * @action: pointer to the function
+ */
+void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	if (name != NULL && f != NULL)
-		(*f)(name);
+	size_t c;
+
+	if (array != NULL && action != NULL)
+	{
+	for (c = 0; c < size; c++)
+		action(array[c]);
+	}
+
 }
